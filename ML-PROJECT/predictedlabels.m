@@ -1,0 +1,2 @@
+function predlab = predictedlabels(Theta1, Theta2, Theta3, X)%Predict the label of an input given a trained neural networkm = size(X, 1);tot_labels = size(Theta3, 1);predlab = zeros(m, tot_labels);X=[ones(m,1) X];%h1 = sigmoid([ones(m, 1) X] * Theta1');%h2 = sigmoid([ones(m, 1) h1] * Theta2');%[dummy, p] = max(h2, [], 2);for i=1:m,  a1=X(i,:)';  a2=sigmoid(Theta1*a1);  a2=[1;a2];  a3=sigmoid(Theta2*a2);  a3=[1;a3];  a4=sigmoid(Theta3*a3);  if (a4 > 0.5)  %[maxval maxind]=max(a4);   predlab(i)=1;  endif
+endend

@@ -1,0 +1,1 @@
+function W = InitializeWeights(input_layer_size, output_layer_size)W = zeros(output_layer_size, 1 + input_layer_size);%+1 for including bias unitepsilon = 0.12;W =(rand(output_layer_size, 1 + input_layer_size) * 2 * epsilon)-(epsilon);%to initailize weights in range [-epsilon,+epsilon]end
